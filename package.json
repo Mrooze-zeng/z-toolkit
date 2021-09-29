@@ -1,0 +1,11 @@
+{
+  "name": "z-toolkit",
+  "version": "0.0.1",
+  "description": "个人开发的小工具包",
+  "scripts": {},
+  "main": "index.js",
+  "repository": "git@github.com:Mrooze-zeng/z-toolkit.git",
+  "author": "Mrooze",
+  "license": "MIT",
+  "private": false
+}
