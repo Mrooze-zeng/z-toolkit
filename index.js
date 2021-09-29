@@ -1,11 +1,9 @@
-const CreatePackagesExportsPlugin = require("./webpack/create-packages-exports-plugin");
-const DisableEslintCheckPlugin = require("./webpack/disable-eslint-check-plugin");
-const VueUsePackagesLoader = require("./webpack/vue-use-packages-loader");
-const VueUsePackagesPlugin = require("./webpack/vue-use-packages-plugin");
-
 module.exports.webpack = {
-  CreatePackagesExportsPlugin,
-  DisableEslintCheckPlugin,
-  VueUsePackagesLoader,
-  VueUsePackagesPlugin,
+  CreatePackagesExportsPlugin: require("./webpack/create-packages-exports-plugin"),
+  DisableEslintCheckPlugin: require("./webpack/disable-eslint-check-plugin"),
+  VueUsePackagesLoader: require("./webpack/vue-use-packages-loader"),
+  VueUsePackagesPlugin: require("./webpack/vue-use-packages-plugin"),
+  createPackage: require("./vue-services/createPackage"),
+  fetchPackage: require("./vue-services/fetchPackage"),
+  updateTemplate: require("./vue-services/updateTemplate"),
 };
