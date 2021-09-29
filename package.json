@@ -4,8 +4,7 @@
   "description": "个人开发的小工具包",
   "scripts": {
     "install-local": "npm link .",
-    "uninstall-local": "npm unlink .",
-    "publish": "npm version minor && npm publish --access public"
+    "uninstall-local": "npm unlink ."
   },
   "main": "index.js",
   "repository": "git@github.com:Mrooze-zeng/z-toolkit.git",
