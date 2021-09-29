@@ -9,6 +9,7 @@ jobs:
       contents: read
       packages: write
     steps:
+      - uses: AutoModality/action-clean@v1
       - uses: actions/checkout@v2
       # Setup .npmrc file to publish to npm
       - uses: actions/setup-node@v2
