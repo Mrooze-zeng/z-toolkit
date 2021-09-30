@@ -63,7 +63,7 @@ export default {install,${components}};`;
       ...config,
     });
   }
-  async readDir() {
+  readDir() {
     const folders = fs.readdirSync(this.options.targetFolder);
     folders.forEach((file) => {
       const folder = path.join(this.options.targetFolder, file);
@@ -79,8 +79,9 @@ export default {install,${components}};`;
         fs.unlinkSync(folder);
       }
     });
+    return this.folderCollection;
   }
-  async createFiles(folderCollection = this.folderCollection) {
+  createFiles(folderCollection = this.folderCollection) {
     let importCodeString = "";
     let list = [];
 
@@ -111,8 +112,7 @@ export default {install,${components}};`;
   apply(compiler) {
     compiler.hooks.environment.tap(this.constructor.name, this.run.bind(this));
   }
-  async run() {
-    await this.readDir();
-    await this.createFiles();
+  run() {
+    this.createFiles(this.readDir());
   }
 };
