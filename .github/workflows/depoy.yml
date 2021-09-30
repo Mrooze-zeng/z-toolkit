@@ -18,14 +18,13 @@ jobs:
         with:
           node-version: "14.x"
           registry-url: "https://registry.npmjs.org"
-      - name: version and publish
-        run: |
+      - run: |
           git config user.name $GITHUB_ACTOR
           git config user.email mrooze@outlook.com
       # - run: npm install
       # Publish to npm
       - run: |
-          npm version $RELEASE_VERSION
+          npm version $RELEASE_VERSION --no-git-tag-version
           npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
