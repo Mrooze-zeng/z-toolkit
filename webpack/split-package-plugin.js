@@ -1,5 +1,7 @@
 const fastDeepEqual = require("fast-deep-equal");
+const path = require("path");
 const CreatePackagesExportsPlugin = require("./create-packages-exports-plugin");
+const pkg = require(path.resolve(process.cwd(), "package.json"));
 
 module.exports = class SplitPackage {
   currentEntry = {};
@@ -10,8 +12,13 @@ module.exports = class SplitPackage {
   createNewEntries() {
     const s = new CreatePackagesExportsPlugin();
     for (const [name] of s.readDir()) {
-      this.newEntries[name] = `./packages/${name}`;
+      if (this.getPackageToExport().includes(name)) {
+        this.newEntries[name] = `./packages/${name}`;
+      }
     }
+  }
+  getPackageToExport(packageToExport = []) {
+    return packageToExport.concat(pkg.packageToExport || []);
   }
   apply(compiler) {
     compiler.hooks.entryOption.tap(this.constructor.name, (context, entry) => {
