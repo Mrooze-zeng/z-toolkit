@@ -25,10 +25,9 @@ module.exports = class ExtractReadmePlugin {
                     parser.state.current.context,
                   );
                   packageName &&
-                    (compilation.assets[`${packageName}.readme.md`] =
-                      new RawSource(
-                        this.getExtractComments(packageName, comment.value),
-                      ));
+                    (compilation.assets[`${packageName}.md`] = new RawSource(
+                      this.getExtractComments(packageName, comment.value),
+                    ));
                 }
               });
             });
