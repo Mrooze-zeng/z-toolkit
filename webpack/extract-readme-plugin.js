@@ -3,7 +3,7 @@ const { RawSource } = require("webpack-sources");
 module.exports = class ExtractReadmePlugin {
   constructor(
     options = {
-      reg: /@readme/i,
+      reg: /@readme/gim,
       packageNameReg: /\/packages\/([\w|-]+)\/src$/i,
     },
   ) {
@@ -44,7 +44,7 @@ module.exports = class ExtractReadmePlugin {
       packageName,
       (this.allExtractedComments.has(packageName)
         ? this.allExtractedComments.get(packageName)
-        : "") + comment.replace(this.options.reg, ""),
+        : "") + comment.replace(this.options.reg, "").replace(/^ ?\*/gm, ""),
     );
     return this.allExtractedComments.get(packageName) || "";
   }
