@@ -4,6 +4,10 @@ const prettier = require("prettier");
 const prettierOptions = require("./prettier-default-options.json");
 const pkg = require(path.resolve(process.cwd(), "package.json"));
 
+/**
+ * @readme
+ * sdfk
+ */
 module.exports = class CreatePackagesExportsPlugin {
   constructor({
     targetFolder = path.join(process.cwd(), "packages/"),

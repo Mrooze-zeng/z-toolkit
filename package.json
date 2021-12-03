@@ -10,6 +10,7 @@
     "webpack plugins"
   ],
   "scripts": {
+    "extract-comment": "node ./config/extract-comments",
     "install-local": "npm link .",
     "uninstall-local": "npm unlink ."
   },
@@ -18,6 +19,10 @@
   "author": "Mrooze",
   "license": "MIT",
   "private": false,
+  "devDependencies": {
+    "tapable": "^2.2.1",
+    "webpack-sources": "^3.2.2"
+  },
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@babel/types": "^7.15.6",
@@ -27,7 +32,6 @@
     "fast-deep-equal": "^3.1.3",
     "globby": "^12.0.2",
     "loader-utils": "^2.0.0",
-    "prettier": "^2.4.1",
-    "webpack-sources": "^3.2.2"
+    "prettier": "^2.4.1"
   }
 }

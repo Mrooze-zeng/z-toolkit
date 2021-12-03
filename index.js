@@ -1,4 +1,5 @@
 module.exports = {
+  // @readme hello world
   CreatePackagesExportsPlugin: require("./webpack/create-packages-exports-plugin"),
   DisableEslintCheckPlugin: require("./webpack/disable-eslint-check-plugin"),
   VueUsePackagesLoader: require("./webpack/vue-use-packages-loader"),
