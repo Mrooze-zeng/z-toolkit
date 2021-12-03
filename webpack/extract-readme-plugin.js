@@ -44,7 +44,7 @@ module.exports = class ExtractReadmePlugin {
       packageName,
       (this.allExtractedComments.has(packageName)
         ? this.allExtractedComments.get(packageName)
-        : "") + comment.replace(this.options.reg, "").replace(/^ ?\*/gm, ""),
+        : "") + comment.replace(this.options.reg, "").replace(/^\s*\*/gm, ""),
     );
     return this.allExtractedComments.get(packageName) || "";
   }

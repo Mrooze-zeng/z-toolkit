@@ -2,6 +2,13 @@
   "name": "z-toolkit-v1",
   "version": "0.2.0",
   "description": "个人开发的小工具包",
+  "keywords": [
+    "webpack",
+    "vue-cli",
+    "vue-services",
+    "webpack loaders",
+    "webpack plugins"
+  ],
   "scripts": {
     "install-local": "npm link .",
     "uninstall-local": "npm unlink ."
